@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import '../NewSecCode.dart'; // استبدل بمسار الملف الأصلي الخاص بك
+import 'NewSecCode.dart'; // استيراد الملف مباشرةً من نفس المجلد
 
 void main() {
   group('Authentication Tests', () {
@@ -33,4 +33,3 @@ void main() {
     });
   });
 }
-
