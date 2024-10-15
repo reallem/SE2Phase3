@@ -2,12 +2,12 @@ name: se2phase3
 description: A simple Dart project for testing.
 version: 1.0.0
 
-environment:
+  environment:
   sdk: '^3.5.0'  # قيد إصدار Dart
 
-dependencies:
+  dependencies:
   encrypt: ^5.0.0
 
-dev_dependencies:
+  dev_dependencies:
   test: ^1.16.0
 
