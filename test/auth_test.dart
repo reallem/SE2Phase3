@@ -2,34 +2,22 @@ import 'package:test/test.dart';
 import 'NewSecCode.dart'; // استيراد الملف مباشرةً من نفس المجلد
 
 void main() {
-  group('Authentication Tests', () {
-    test('Authentication success with valid credentials', () {
-      expect(authenticate('admin', 'password123'), isTrue);
-    });
-
-    test('Authentication fails with invalid username', () {
-      expect(authenticate('user', 'password123'), isFalse);
-    });
-
-    test('Authentication fails with invalid password', () {
-      expect(authenticate('admin', 'wrongpassword'), isFalse);
-    });
+  test('Test authenticate with correct credentials', () {
+    expect(authenticate('admin', 'password123'), isTrue);
   });
 
-  group('Encryption Tests', () {
-    test('Encrypt and decrypt data correctly', () {
-      String originalData = "AccountNumber123456";
-      String encryptedData = encryptData(originalData);
-      String decryptedData = decryptData(encryptedData);
-      
-      expect(decryptedData, equals(originalData));
-    });
+  test('Test authenticate with incorrect credentials', () {
+    expect(authenticate('user', 'password123'), isFalse);
+  });
 
-    test('Encrypt data is not equal to original data', () {
-      String originalData = "AccountNumber123456";
-      String encryptedData = encryptData(originalData);
-      
-      expect(encryptedData, isNot(equals(originalData)));
-    });
+  test('Test authenticate with wrong password', () {
+    expect(authenticate('admin', 'wrongpassword'), isFalse);
+  });
+
+  test('Test encryptData and decryptData', () {
+    String originalData = 'Sensitive Data';
+    String encryptedData = encryptData(originalData);
+    String decryptedData = decryptData(encryptedData);
+    expect(decryptedData, equals(originalData));
   });
 }
