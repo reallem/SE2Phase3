@@ -1,0 +1,9 @@
+name: se2phase3
+description: A simple Dart project for testing.
+version: 1.0.0
+
+dependencies:
+  encrypt: ^5.0.0
+
+dev_dependencies:
+  test: ^1.16.0
